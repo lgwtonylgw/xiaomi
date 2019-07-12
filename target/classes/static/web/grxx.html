@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>个人信息</title>
+    <link rel="stylesheet" href="../css/xmzh/component.css">
+    <link rel="stylesheet" href="../css/xmzh/content.css">
+    <script type="text/javascript" src="../jquery/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="../js/xmzh/modernizr.custom.js"></script>
+
+    <script type="text/javascript" src="../js/xmzh/classie.js"></script>
+    <script type="text/javascript" src="../js/xmzh/uiMorphingButton_fixed.js"></script>
+    <script src="../jq/2.14.js"></script>
+    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../cropper/cropper.min.css" rel="stylesheet">
+    <link href="../sitelogo/sitelogo.css" rel="stylesheet">
+    <script src="../cropper/cropper.min.js"></script>
+    <script src="../sitelogo/sitelogo.js"></script>
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <style type="text/css">
+        .inname{
+            padding: 10px;
+            width: 281px;
+            border: 2px solid #edb3bd;
+        }
+    </style>
+
+</head>
+<body id="big">
+<header>
+    <div class="jg_tou">
+        <a href="../index.html"> <img alt="" src="../imgs/xmzh.png">
+        </a> <a href="/user/exit" class="cscl" id="tc">退出</a>
+    </div>
+
+</header>
+<article>
+    <div id="jg_bt">
+        <ul>
+            <li><a href="xmzh.html" class="xgx">帐号安全</a></li>
+            <li><a href="grxx.html" class="xgx" id="hzh">个人信息</a></li>
+            <li><a href="#" class="xgx">绑定授权</a></li>
+            <li><a href="#" class="xgx">小米服务</a></li>
+        </ul>
+    </div>
+    <div id="zhengwen" style="height: 400px;">
+
+        <div id="xjj" style="left: 18%; top: -2.5%;"></div>
+        <div class="touxiang" style="top: -16%;">
+            <div id="mz">
+                <p id="nickp"></p>
+                <p id="bianhao">22007133172</p>
+            </div>
+            <div class="dy">
+                <div class="xy"
+                     style=" top: 4%; left: 6%; background-size:cover;">
+                    <img  class="touxianga" src="../imgs/1.png" style="width: 80px; height: 80px;">
+                </div>
+            </div>
+        </div>
+        <div id="zwtouxiang">
+            <div id="zwdy">
+                <!--  头像-->
+                <div id="crop-avatar" class="col-md-6"
+                     style="margin-left: 4px; margin-top: 4px; padding: 0; width: 80px; border-radius: 50%;">
+                    <div class="avatar-view" title="Change Logo Picture">
+                        <img class="touxianga" src="../imgs/1.png" >
+                    </div>
+                </div>
+            </div>
+            <div id="sztxadiv">
+                <a id="sztxa">设置头像</a>
+            </div>
+        </div>
+        <div id="jgzl">
+            <div>
+                <h3>基础资料</h3>
+                <div
+                        class="morph-button morph-button-modal morph-button-modal-2 morph-button-fixed">
+                    <button type="button" class="xgaj">
+                        <a id="xgcl">修改</a>
+                    </button>
+                    <div class="morph-content" style="height: 335px;">
+                        <div>
+                            <div class="content-style-form content-style-form-1">
+                                <span class="icon icon-close">Close the dialog</span>
+                                <h4 id="tcbt">编辑基础资料</h4>
+                                <form action="" method="post" name="reg_testdate">
+                                    <p class="zlkj">
+                                        姓名：<input name="name" placeholder="请输入姓名" class="inname"
+                                                  id="nickname">
+                                    </p>
+                                    <p class="zlkj">
+                                        生日：<select name="YYYY" onChange="YYYYDD(this.value)"
+                                                   class="jgdate" id="year">
+                                        <option value="">请选择 年</option>
+                                    </select> <select name="MM" onChange="MMDD(this.value)" class="jgdate"
+                                                      id="month">
+                                        <option value="">选择 月</option>
+                                    </select> <select name="DD" class="jgdate" id="day">
+                                        <option value="">选择 日</option>
+                                    </select>
+                                    </p>
+                                    <br>
+                                    <p class="zlkj">
+                                        性别：男<input type="radio" value="男" name="gender"> 女<input
+                                            type="radio" value="女" name="gender">
+                                    </p>
+                                    <p style="height: 80px;">
+                                        <button type="button"
+                                                style="padding: 0.5em; margin-top: 1em;" id="xx-btn">确认</button>
+                                    </p>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="zlzj">
+                <p>
+                    <span>姓名：</span><span id="span1"></span>
+                </p>
+            </div>
+            <div class="zlzj">
+                <p>
+                    <span>生日：</span><span id="span2"></span>
+                </p>
+            </div>
+            <div class="zlzj">
+                <p>
+                    <span>性别：</span><span id="span3"></span>
+                </p>
+            </div>
+        </div>
+        <div id="jgzl">
+            <div>
+                <h3>高级设置</h3>
+                <div
+                        class="morph-button morph-button-modal morph-button-modal-2 morph-button-fixed">
+                    <button type="button" class="xgaj">
+                        <a id="xgcl">修改</a>
+                    </button>
+                    <div class="morph-content" style="height: 260px;">
+                        <div>
+                            <div class="content-style-form content-style-form-1">
+                                <span class="icon icon-close">Close the dialog</span>
+                                <h4 id="tcbt">高级设置</h4>
+                                <form action="">
+                                    <p class="zlkj">
+                                        银行卡号：<input name="" placeholder="请输入银行卡号" class="inname"
+                                                    id="bcknumber">
+                                    </p>
+                                    <p class="zlkj">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;地区：<input
+                                            name="name" placeholder="地区" class="inname" id="address">
+                                    </p>
+                                    <p style="height: 80px;">
+                                        <button type="button"
+                                                style="padding: 0.5em; margin-top: 0.5em; width: 137px; margin-left: 110px;"
+                                                id="bck-btn">确认</button>
+                                    </p>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="zlzj">
+                <p>
+                    <span>银行卡：</span><span id="span4"></span>
+                </p>
+            </div>
+            <div class="zlzj">
+                <p>
+                    <span>帐号地区：</span><span id="span5"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- 头像弹出层 -->
+    <div class="modal fade" id="avatar-modal" aria-hidden="true"
+         aria-labelledby="avatar-modal-label" role="dialog" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <form class="avatar-form" action="{{url('admin/upload-logo')}}"
+                      enctype="multipart/form-data" method="post" id="fileForm"
+                      name="fileForm">
+                    <div class="modal-header">
+                        <button class="close" data-dismiss="modal" type="button">&times;</button>
+                        <h4 class="modal-title" id="avatar-modal-label">头像修改</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="avatar-body">
+                            <div class="avatar-upload">
+                                <label for="avatarInput">图片上传</label> <input
+                                    class="avatar-input" id="avatarInput" name="file " type="file">
+                            </div>
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <div class="avatar-wrapper"></div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="avatar-preview preview-lg"></div>
+                                    <div class="avatar-preview preview-md"></div>
+                                    <div class="avatar-preview preview-sm"></div>
+                                </div>
+                            </div>
+                            <div class="row avatar-btns">
+                                <div class="col-md-9">
+                                    <div class="btn-group">
+                                        <button class="btn" data-method="rotate" data-option="-90"
+                                                type="button" title="Rotate -90 degrees">
+                                            <i class="fa fa-undo"></i> 向左旋转
+                                        </button>
+                                    </div>
+                                    <div class="btn-group">
+                                        <button class="btn" data-method="rotate" data-option="90"
+                                                type="button" title="Rotate 90 degrees">
+                                            <i class="fa fa-repeat"></i> 向右旋转
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <button class="btn btn-success btn-block avatar-save"
+                                            type="button" onclick="getComtent()">
+                                        <i class="fa fa-save"></i> 保存修改
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="loading" aria-label="Loading" role="img" tabindex="-1"></div>
+</article>
+<footer>
+    <div id="yyxz">
+        <ul>
+            <li id="jtli"><a>简体</a></li>
+            <li><a>繁体</a></li>
+            <li><a>English</a></li>
+            <li><a>常见问题</a></li>
+        </ul>
+    </div>
+    <p id="diwen">
+        小米公司版权所有-京ICP备10046444-<img alt="" src="../imgs/jh.png"><img
+            alt="" src="../imgs/jh.png">京公网安备11010802020134号-京ICP证110507号
+    </p>
+</footer>
+<script type="text/javascript">
+    /*  弹出层*/
+    (function() {
+        var docElem = window.document.documentElement, didScroll, scrollPosition;
+
+        // trick to prevent scrolling when opening/closing button
+        function noScrollFn() {
+            window.scrollTo(scrollPosition ? scrollPosition.x : 0,
+                scrollPosition ? scrollPosition.y : 0);
+        }
+
+        function noScroll() {
+            window.removeEventListener('scroll', scrollHandler);
+            window.addEventListener('scroll', noScrollFn);
+        }
+
+        function scrollFn() {
+            window.addEventListener('scroll', scrollHandler);
+        }
+
+        function canScroll() {
+            window.removeEventListener('scroll', noScrollFn);
+            scrollFn();
+        }
+
+        function scrollHandler() {
+            if (!didScroll) {
+                didScroll = true;
+                setTimeout(function() {
+                    scrollPage();
+                }, 60);
+            }
+        }
+        ;
+
+        function scrollPage() {
+            scrollPosition = {
+                x : window.pageXOffset || docElem.scrollLeft,
+                y : window.pageYOffset || docElem.scrollTop
+            };
+            didScroll = false;
+        }
+        ;
+
+        scrollFn();
+
+        [].slice.call(document.querySelectorAll('.morph-button')).forEach(
+            function(bttn) {
+                new UIMorphingButton(bttn, {
+                    closeEl : '.icon-close',
+                    onBeforeOpen : function() {
+                        // don't allow to scroll
+                        noScroll();
+                    },
+                    onAfterOpen : function() {
+                        // can scroll again
+                        canScroll();
+                    },
+                    onBeforeClose : function() {
+                        // don't allow to scroll
+                        noScroll();
+                    },
+                    onAfterClose : function() {
+                        // can scroll again
+                        canScroll();
+                    }
+                });
+            });
+
+        // for demo purposes only
+        [].slice.call(document.querySelectorAll('form button')).forEach(
+            function(bttn) {
+                bttn.addEventListener('click', function(ev) {
+                    ev.preventDefault();
+                });
+            });
+    })();
+    /* 日期选择 */
+    function YYYYMMDDstart() {
+        MonHead = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ];
+
+        //先给年下拉框赋内容
+        var y = new Date().getFullYear();
+        for (var i = (y - 100); i < (y + 1); i++)
+            //以今年为准，前30年，后30年
+            document.reg_testdate.YYYY.options
+                .add(new Option(" " + i + " 年", i));
+
+        //赋月份的下拉框
+        for (var i = 1; i < 13; i++)
+            document.reg_testdate.MM.options.add(new Option(" " + i + " 月", i));
+
+        document.reg_testdate.YYYY.value = y;
+        document.reg_testdate.MM.value = new Date().getMonth() + 1;
+        var n = MonHead[new Date().getMonth()];
+        if (new Date().getMonth() == 1 && IsPinYear(YYYYvalue))
+            n++;
+        writeDay(n); //赋日期下拉框Author:meizz
+        document.reg_testdate.DD.value = new Date().getDate();
+    }
+    if (document.attachEvent)
+        window.attachEvent("onload", YYYYMMDDstart);
+    else
+        window.addEventListener('load', YYYYMMDDstart, false);
+    function YYYYDD(str) //年发生变化时日期发生变化(主要是判断闰平年)
+    {
+        var MMvalue = document.reg_testdate.MM.options[document.reg_testdate.MM.selectedIndex].value;
+        if (MMvalue == "") {
+            var e = document.reg_testdate.DD;
+            optionsClear(e);
+            return;
+        }
+        var n = MonHead[MMvalue - 1];
+        if (MMvalue == 2 && IsPinYear(str))
+            n++;
+        writeDay(n)
+    }
+    function MMDD(str) //月发生变化时日期联动
+    {
+        var YYYYvalue = document.reg_testdate.YYYY.options[document.reg_testdate.YYYY.selectedIndex].value;
+        if (YYYYvalue == "") {
+            var e = document.reg_testdate.DD;
+            optionsClear(e);
+            return;
+        }
+        var n = MonHead[str - 1];
+        if (str == 2 && IsPinYear(YYYYvalue))
+            n++;
+        writeDay(n)
+    }
+    function writeDay(n) //据条件写日期的下拉框
+    {
+        var e = document.reg_testdate.DD;
+        optionsClear(e);
+        for (var i = 1; i < (n + 1); i++)
+            e.options.add(new Option(" " + i + " 日", i));
+    }
+    function IsPinYear(year)//判断是否闰平年
+    {
+        return (0 == year % 4 && (year % 100 != 0 || year % 400 == 0));
+    }
+    function optionsClear(e) {
+        e.options.length = 1;
+    }
+    /* 姓名 生日 性别 修改*/
+    $("#xx-btn").click(
+        function() {
+            var nickname = $("#nickname").val();
+            var year = $("#year option:checked").text();
+            var month = $("#month option:checked").text();
+            var day = $("#day option:checked").text();
+            var birth = year + month + day;
+            var gender = $('input[name="gender"]:checked').val();
+            $.ajax({
+                "url" : "/user/changegrxx",
+                "data" : "nickname=" + nickname + "&birth=" + birth
+                    + "&gender=" + gender,
+                "type" : "POST",
+                "dataType" : "json",
+                "success" : function(json) {
+                    if (json.state == 200) {
+                        alert("修改成功！");
+                        $("#span1").text(json.data.nickname);
+                        $("#span2").text(json.data.birth);
+                        $("#span3").text(json.data.gender);
+                    } else if (json.state == 9527) {
+                        alert(json.message);
+                        location.href = "login.html";
+                    }
+                }
+            });
+        });
+    /*修改银行卡号和地区*/
+    $("#bck-btn").click(function() {
+        var bcnumber = $("#bcknumber").val();
+        var areas = $("#address").val();
+        $.ajax({
+            "url" : "/user/bcnumber",
+            "data" : "bcnumber=" + bcnumber + "&areas=" + areas,
+            "type" : "POST",
+            "dataType" : "json",
+            "success" : function(json) {
+                if (json.state == 200) {
+                    alert("修改成功！");
+                    $("#span4").text(json.data.bcnumber)
+                    $("#span5").text(json.data.areas)
+                } else if (json.state == 9527) {
+                    alert(json.message);
+                    location.href = "login.html";
+                }
+            }
+        });
+    });
+    /* 头像 */
+    //获取编辑内容
+    function getComtent() {
+        var fm = new FormData($( "#fileForm" )[0]);
+        //进行Ajax请求
+        $.ajax({
+            //几个参数需要注意一下
+            "type": "POST",//方法类型
+            "dataType": "json",//预期服务器返回的数据类型,可以不设置
+            "url": "/user/file" ,//url
+            "data": fm,
+            "async": false,
+            "cache": false,
+            "contentType": false, //禁止设置请求类型
+            "processData": false, //禁止jquery对DAta数据的处理,默认会处理
+            "success": function (json) {
+                console.log(json.message);//打印服务端返回的数据(调试用)
+                if (json.state==200) {
+                    //跳转页面
+                    alert("上传成功!");
+                    $(".touxianga").attr("src",json.data);
+                }else if(json.state==401){
+                    alert(json.message);
+                }else if(json.state==501){
+                    alert(jspn.message);
+                }else if(json.state==600){
+                    alert(jspn.message);
+                }else if(json.state==601){
+                    alert(jspn.message);
+                }else if(json.state==604){
+                    alert(jspn.message);
+                }else if(json.state==602){
+                    alert(jspn.message);
+                }else if(json.state==603){
+                    alert(jspn.message);
+                } else{
+                    alert("出现未知错误请重新登录！");
+                }
+            },
+            "error":function(){
+                alert("您的登陆已过期，请重新登陆!")
+                location.href="login.html";
+            }
+        });
+    }
+    $(document).ready(function () {
+        loadgrxx();
+    });
+    function loadgrxx() {
+        $.ajax({
+            "url":"/user/grxx",
+            "type":"GET",
+            "dataType":"json",
+            "success":function (json) {
+                $(".touxianga").attr("src",json.data.userimg);
+                $("#nickp").text(json.data.nickname);
+                $("#span1").text(json.data.nickname)
+                $("#span2").text(json.data.birth)
+                $("#span3").text(json.data.gender)
+                $("#span4").text(json.data.bcnumber)
+                $("#span5").text(json.data.areas)
+            }
+        });
+    };
+</script>
+</body>
+</html>

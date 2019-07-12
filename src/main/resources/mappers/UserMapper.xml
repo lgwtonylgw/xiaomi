@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.tedu.xiaomi.mapper.UserMapper">
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO m_user (
+          username,password,phone,email,salt,created_time,created_user,
+          modified_time,modified_user
+          ) values (
+          #{username},#{password},#{phone},#{email},#{salt},#{createdTime},#{createdUser},
+          #{modifiedTime},#{modifiedUser}
+          )
+    </insert>
+    <select id="findUserByUsername"
+            resultType="cn.tedu.xiaomi.entity.User">
+		SELECT
+		id,nickname,
+		password, username,
+		phone, email,
+		questionone,questiontwo,
+		questionthree,answerone,
+		answertwo,answerthree,
+		gender,bcnumber,
+		areas,birth,
+		userimg,salt
+		FROM
+		m_user
+		WHERE
+		username=#{username}
+	</select>
+    <select id="findByUsername" resultType="cn.tedu.xiaomi.entity.User">
+		SELECT
+		id,nickname,
+		password, username,salt,
+		userimg
+		FROM
+		m_user
+		WHERE
+		username=#{username}
+	</select>
+    <!-- 根据用户id查询用户数据 User findUserById(Integer id); -->
+    <select id="findUserById" resultType="cn.tedu.xiaomi.entity.User">
+		SELECT
+		id,password,salt,username,gender,phone,email,userimg
+		FROM
+		m_user
+		WHERE
+		id=#{id}
+	</select>
+    <!--更改密码 Integer updatePassword( @Param("id") Integer id, @Param("password")
+        String password ); -->
+    <update id="updatePassword"
+            parameterType="cn.tedu.xiaomi.entity.User">
+		update m_user SET password=#{password},
+		modified_time=#{modifiedTime},
+		modified_user=#{modifiedUser}
+		WHERE id=#{id}
+	</update>
+    <!-- -->
+    <update id="updateInfo">
+        UPDATE m_user SET
+
+        <if test="phone != null"> phone=#{phone}, </if>
+
+        <if test="email != null"> email=#{email} ,</if>
+        modified_user=#{modifiedUser}, modified_time=#{modifiedTime} WHERE
+        id=#{id}
+    </update>
+    <update id="updateQuestion">
+		UPDATE m_user SET
+		questionone=#{questionone},
+		questiontwo=#{questiontwo},
+		questionthree=#{questionthree},
+		answerone=#{answerone},
+		answertwo=#{answertwo},
+		answerthree=#{answerthree},
+		modified_user=#{modifiedUser}, modified_time=#{modifiedTime}
+		 WHERE id=#{id}
+	</update>
+    <update id="updateBcnumber">
+		UPDATE m_user SET
+		 <if test="bcnumber!=null"> bcnumber=#{bcnumber},</if>
+        <if test="areas!=null"> areas=#{areas}</if>
+		  WHERE username=#{username}
+	</update>
+    <update id="updateUserimg">
+		UPDATE m_user SET userimg=#{userimg} WHERE id=#{id}
+	</update>
+	<update id="updateGrxx">
+		UPDATE m_user SET
+		<if test="nickname != null"> nickname=#{nickname}, </if>
+
+		<if test="birth != null"> birth=#{birth}, </if>
+
+		<if test="gender != null"> gender=#{gender} </if>
+		 WHERE
+		username=#{username}
+	</update>
+</mapper>

@@ -1,0 +1,164 @@
+@charset "UTF-8";
+
+	/* 先设置所有div外边距为0，只在需要的位置设置 */
+	body{
+	background-color:#f5f5f5;
+	}
+	body a{
+	text-decoration:none;
+	}
+	body>div{
+	width:1226px;
+	margin:0 auto;
+	padding:0;
+	}
+	#pic,#pic>a>img{
+	width:1226px;
+	height:120px;
+	}
+	/* 标题栏 */
+	#dapei>#title{
+	width:1226px;
+	height:58px;
+	position:relative;
+	}
+	#dapei>#title>h2{
+	font-size:22px;
+	color:#333;
+	line-height:58px;
+	font-weight:normal;
+	}
+	#dapei>#title>div{
+	padding:6px 0 0 0;
+	position:absolute;
+	right:0px;
+	top:0px;
+	}
+	#dapei>#title>div>ul>li{
+	list-style-type:none;
+	color:#424242;
+	font-size:16px;
+	float:left;
+	margin-left:30px;
+	}
+	/* 热门、耳机音箱、电源、电池存储卡，鼠标放上去后的字体变化效果 */
+	#dapei>#title>div>ul>.ontitle{
+	color:#ff6700;
+	border-bottom:2px solid #ff6700;
+	}
+	/* 内容部分 */
+	#dapei>#content{
+	width:1226px;
+	margin:0 auto;
+	padding:0;
+	position:relative;
+	}
+	/* 内容中所有div的格式 */
+	#dapei>#content>#content_left>a,#dapei>#content>.content_right>a{
+	position:block;
+	float:left;
+	height:300px;
+	text-align:center;
+	}
+	#dapei>#content>div{
+	display:inline-block;
+	float:left;
+	}
+	#dapei>#content>#content_left{
+	width:234px;
+	margin:0;
+	padding:0;
+	}
+	#dapei>#content>#content_left>.content1,#dapei>#content>#content_left>.content1>img{
+	width:234px;
+	height:300px;
+	}
+	#dapei>#content>#content_left>.content1{
+	margin-bottom:14px;
+	}
+	
+	#dapei>#content>.content_right{
+	width:992px;
+	margin:0;
+	padding:0;
+	}
+	#dapei>#content>.content_right>.content2{
+	width:234px;
+	height:246px;
+	margin:0 0 14px 14px;
+	padding:34px 0 20px 0;
+	background-color:#fff;
+	}
+	#dapei>#content>.content_right>.content2>img{
+	width:150px;
+	height:150px;
+	}
+	#dapei>#content>.content_right>.content2>.p1{
+	color:#333;
+	font-size:14px;
+	margin:15px 0 0 0;
+	}
+	#dapei>#content>.content_right>.content2>.p2{
+	margin:0 10px 10px 10px;
+	}
+	#dapei>#content>.content_right>.content2>.p2>.s1{
+	color:#ff6700;
+	font-size:14px;
+	}
+	#dapei>#content>.content_right>.content2>.p2>.s2{
+	color:#b0b0b0;
+	font-size:14px;
+	text-decoration:line-through;
+	margin-left:5px;
+	}
+	#dapei>#content>.content_right>.content2>.p3{
+	margin:0 10px 0 10px;
+	color:#b0b0b0;
+	font-size:12px;
+	}
+	#dapei>#content>.content_right>.content4,#dapei>#content>.content_right>.content5{
+	width:234px;
+	height:143px;
+	margin:0 0 14px 14px;
+	padding:0;
+	background-color:#fff;
+	position:relative;
+	}
+	#dapei>#content>.content_right>.content4>.c4p1{
+	padding:0;
+	color:#333;
+	font-size:14px;
+	margin:30px 25px 0px 0;
+	}
+	#dapei>#content>.content_right>.content4>.c4p2{
+	padding:0;
+	color:#ff6700;
+	font-size:14px;
+	margin:10px 135px 40px 0;
+	}
+	#dapei>#content>.content_right>.content4>img{
+	width:80px;
+	height:80px;
+	position:absolute;
+	right:15px;
+	top:30px;
+	}
+	#dapei>#content>.content_right>.content5>.c5p1{
+	padding:0;
+	color:#333;
+	font-size:18px;
+	margin:50px 95px 0px 0;
+	}
+	#dapei>#content>.content_right>.content5>.c5p2{
+	padding:0;
+	color:#757575;
+	font-size:12px;
+	margin:10px 135px 40px 0;
+	}
+	#dapei>#content>.content_right>.content5>img{
+	width:48px;
+	height:48px;
+	position:absolute;
+	right:25px;
+	top:50px;
+	}

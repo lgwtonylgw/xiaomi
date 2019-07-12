@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>注册页面</title>
+<script type="text/javascript" src="../jquery/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="../jquery/jquery-3.4.1.js"></script>
+<style type="text/css">
+body {
+	background-color: #eee;
+}
+
+#big {
+	width: 854px;
+	margin: 0 auto;
+	background-color: #fff;
+	overflow: hidden;
+}
+
+#dimg {
+	text-align: center;
+}
+
+h4 {
+	font-size: 30px;
+	font-weight: normal;
+	text-align: center;
+	margin: 25px;
+}
+
+#formd {
+	width: 332px;
+	padding: 30px 0;
+	line-height: 20px;
+	margin: 0 auto;
+}
+
+form input,select{
+	height: 40px;
+	width: 268px;
+	line-height: 40px;
+	display: inline-block;
+	vertical-align: middle;
+	border: 1px solid #e8e8e8;
+	color: #555;
+	margin: 5px 0;
+	padding: 0 30px;
+}
+select{
+	width: 100%;
+	background-color: #eee;
+}
+form p{
+margin: 0;
+font-size: 14px;
+}
+#mid{
+	height: 15px;
+}
+#sub{
+	background: #ff936a;
+	margin-top: 15px;
+	color: #fff;
+	margin: 20px auto;
+	display: block;
+}
+.rs{
+	font-weight: bold;
+}
+#last{
+	text-align: center;
+	margin-bottom: 40px;
+}
+a {
+	text-decoration: none;
+	color: #666;
+}
+
+a:hover {
+	color: #f56600;
+}
+footer{
+	margin-top: 50px;
+}
+footer span{
+	margin: 0 8px;
+}
+footer>div{
+	text-align: center;
+}
+footer p{
+	margin: 10px auto;
+	font-size: 14px;
+	text-align: center;
+}
+#tnum{
+	display:inline-block;
+	border:1px solid #e8e8e8;
+	line-height: 40px;
+	width: 40px;
+	vertical-align: -1.5px;
+	text-align: center;
+}
+#num{
+	width: 224px;
+}
+</style>
+</head>
+<body>
+	<div id="big">
+		<div id="dimg"><a href="../index.html"><img src="../imgs/logo-footer.png"></a></div>
+		<h4>注册小米帐号</h4>
+		<div id="formd">
+		
+			<form id="reg-form" action="login.html">
+			<p>国家/地区 </p>
+				<select>
+			<option value="1">中国</option>
+			<option value="2">美国</option>
+			<option value="3">日本</option>
+			<option value="4">韩国</option>
+		</select> 
+				<p>成功注册帐号后，国家/地区将不能被修改</p>
+				<div id="mid"></div>
+				<p>用户名</p>
+				<input name="username" type="text" placeholder="请输入用户名">
+				<p>手机号码 </p>
+				<span id="tnum">+86</span><input id="num" name="phone" type="text" placeholder="请输入手机号">
+				<p>密码</p>
+				<input id="num1" name="password" type="password" placeholder="输入密码">
+				<p>邮箱</p>
+				<input id="num2" name="email" type="text" placeholder="输入邮箱">
+				<input type="button" value="获取验证码" id="email-btn"><br>
+				<input type="text"  id="emailCode" placeholder="输入验证码">
+				<input id="btn-reg" type="button"  id="sub"  value="立即注册"><br>
+				<span class="pull-right"><small>已经有账号？</small><a href="login.html">登录</a></span>
+			</form>
+		</div>
+		<div id="last">
+			<input type="checkbox" checked="checked">
+			<span>注册帐号即表示您同意并愿意遵守小米<span class="rs">用户协议</span>和<span class="rs">隐私政策</span></span>
+		</div>
+	</div>
+	<footer>
+	<div>
+		<a href="#">简体</a><span>|</span>
+		<a href="#">繁体</a><span>|</span>
+		<a href="#">English</a><span>|</span>
+		<a href="#">常见问题</a><span>|</span>
+		<a href="#">隐私</a>
+	</div>
+	<p>小米公司版权所有-京ICP备10046444-<img src="../imgs/ghs.png">京公网安备11010802020134号-京ICP证110507号</p>
+</footer>
+	<script type="text/javascript">
+	$("#btn-reg").click(function() {
+		// 当前位置：/web/register.html
+		// 目标位置：/user/handle_reg.do
+		var url = "/user/reg";
+		var data = $("#reg-form").serialize();
+		console.log("提交的数据：" + data);
+		$.ajax({
+			"url": url,
+			"data": data,
+			"type": "POST",
+			"dataType": "json",
+			"success": function(json) {
+				if (json.state == 200) {
+					// 注册成功
+					alert("注册成功！");
+					location.href = "login.html";
+				} else if (json.state == 401) {
+					// 用户名被占用
+					alert("注册失败！" + json.message);
+				} else {
+					// 未知错误
+					alert(json.message);
+				}
+			}
+		});
+	});
+	$(function () {
+		$("#btn-reg")[0].disabled=true;
+	})
+	$("#email-btn").click(function(){
+		console.log($("#num2").val()+"121");
+		$.ajax({
+			"url":"/user/email",
+			"data":"emailAddress="+$("#num2").val(),
+			"type":"GET",
+			"dataType":"json",
+			"success":function (json) {
+				if(json.state==200){
+					alert("验证码已发送！")
+				}else if(json.state==407){
+					alert(json.message);
+				}else{
+					alert(json.message);
+				}
+			}
+		});
+	});
+	$("#emailCode").blur(function () {
+		$.ajax({
+			"url":"/user/check",
+			"data":"emailCheck="+$("#emailCode").val(),
+			"type":"GET",
+			"dataType":"json",
+			"success":function (json) {
+				if(json.state==200){
+					alert("验证码正确");
+					$("#btn-reg")[0].disabled=false;
+				}else if(json.state==408){
+					alert(json.message);
+				}else{
+					alert(json.message);
+				}
+			},
+			"error":function () {
+				alert("系统异常，稍后再试！")
+			}
+		})
+	})
+	</script>
+</body>
+</html>

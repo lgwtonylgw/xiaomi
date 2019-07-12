@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.tedu.xiaomi.mapper.GoodsMapper">
+    <select id="findHotList" resultType="cn.tedu.xiaomi.entity.Goods">
+        SELECT
+        id,title,price,image,priority
+        FROM
+        t_goods
+        WHERE
+        status=1 AND num>0
+        ORDER BY
+        <if test="x==2"> priority ASC</if>
+        <if test="x==1"> priority DESC </if>
+        LIMIT
+          0,4
+    </select>
+    <select id="findById" resultType="cn.tedu.xiaomi.entity.Goods">
+        SELECT
+        id,title,price,image,sell_point AS sellPoint
+        FROM
+        t_goods
+        WHERE
+        id=#{id}
+    </select>
+</mapper>

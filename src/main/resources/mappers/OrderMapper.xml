@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.tedu.xiaomi.mapper.OrderMapper">
+    <!-- 插入订单数据 -->
+    <!-- Integer insertOrder(Order order) -->
+    <insert id="insertOrder"
+            useGeneratedKeys="true"
+            keyProperty="oid">
+		INSERT INTO t_order (
+			uid, name,
+			phone, address,
+			total_price, state,
+			order_time, pay_time,
+			created_user, created_time,
+			modified_user, modified_time
+		) VALUES (
+			#{uid}, #{recvName},
+			#{recvPhone}, #{recvAddress},
+			#{totalPrice}, #{status},
+			#{orderTime}, #{payTime},
+			#{createdUser}, #{createdTime},
+			#{modifiedUser}, #{modifiedTime}
+		)
+	</insert>
+
+    <!-- 插入订单商品数据 -->
+    <!-- Integer insertOrderItem(OrderItem orderItem) -->
+    <insert id="insertOrderItem"
+            useGeneratedKeys="true"
+            keyProperty="id">
+		INSERT INTO t_order_item (
+			oid,gid,
+			title, image,
+			price, num,
+			created_user, created_time,
+			modified_user, modified_time
+		) VALUES (
+			#{oid},#{gid},
+			#{goodsTitle}, #{goodsImage},
+			#{goodsPrice}, #{goodsNum},
+			#{createdUser}, #{createdTime},
+			#{modifiedUser}, #{modifiedTime}
+		)
+	</insert>
+	<select id="findOrderByOid" resultType="cn.tedu.xiaomi.entity.Order">
+		SELECT
+			oid,
+			uid, name as recvName,
+			phone as recvPhone, address as recvAddress,
+			total_price as totalPrice, state as status,
+			order_time as orderTime, pay_time as payTime
+		FROM
+			t_order
+	  	WHERE
+	  		oid=#{oid}
+	</select>
+	<update id="payOrder">
+		UPDATE t_order SET state=1,pay_time=#{now} WHERE oid=#{oid}
+	</update>
+    <resultMap id="OrderVO_ResultMap"
+               type="cn.tedu.xiaomi.vo.OrderVO">
+        <id column="oid" property="oid" />
+        <result column="uid" property="uid" />
+        <result column="name" property="name" />
+        <result column="phone" property="phone" />
+        <result column="address" property="address" />
+        <result column="total_price" property="totalPrice" />
+        <result column="state" property="state" />
+        <result column="order_time" property="orderTime" />
+        <result column="pay_time" property="payTime" />
+        <collection property="orderItems"
+                    ofType="cn.tedu.xiaomi.entity.OrderItem" >
+            <result column="title" property="goodsTitle" />
+            <result column="image" property="goodsImage" />
+            <result column="price" property="goodsPrice" />
+            <result column="num" property="goodsNum" />
+        </collection>
+    </resultMap>
+
+    <select id="findByOid" resultMap="OrderVO_ResultMap">
+		SELECT
+			t_order.oid,
+			uid, name,
+			phone, address,
+			total_price, state,
+			order_time, pay_time,
+			title, image,
+			price, num
+		FROM
+			t_order
+		LEFT JOIN
+			t_order_item
+		ON
+			t_order.oid=t_order_item.oid
+		WHERE
+			t_order.oid=#{oid}
+	</select>
+	<select id="findByUid" resultMap="OrderVO_ResultMap">
+		SELECT
+			t_order.oid,
+			uid, name,
+			phone, address,
+			total_price, state,
+			order_time, pay_time,
+			title, image,
+			price, num
+		FROM
+			t_order
+		LEFT JOIN
+			t_order_item
+		ON
+			t_order.oid=t_order_item.oid
+		WHERE
+			t_order.uid=#{uid}
+	</select>
+</mapper>

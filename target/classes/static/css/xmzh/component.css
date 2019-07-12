@@ -1,0 +1,619 @@
+/* Morph Button: Default Styles */
+.morph-button>button {
+	position: relative;
+	padding: 0 1em;
+	border: none;
+	background-color: #e85657;
+	color: #f9f6e5;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	overflow: hidden;
+}
+
+/* Common styles for overlay and modal type (fixed morph) */
+.morph-button-fixed, .morph-button-fixed .morph-content {
+	width: 110px;
+	height: 34px;
+}
+
+.morph-button-fixed>button {
+	z-index: 1000;
+	width: 100%;
+	height: 100%;
+	-webkit-transition: opacity 0.1s 0.5s;
+	transition: opacity 0.1s 0.5s;
+}
+
+.morph-button-fixed.open>button {
+	opacity: 0;
+	-webkit-transition: opacity 0.1s;
+	transition: opacity 0.1s;
+}
+
+.morph-button-fixed .morph-content {
+	position: fixed;
+	z-index: 900;
+	opacity: 0;
+	-webkit-transition: opacity 0.3s 0.5s, width 0.4s 0.1s, height 0.4s 0.1s,
+		top 0.4s 0.1s, left 0.4s 0.1s, margin 0.4s 0.1s;
+	transition: opacity 0.3s 0.5s, width 0.4s 0.1s, height 0.4s 0.1s, top
+		0.4s 0.1s, left 0.4s 0.1s, margin 0.4s 0.1s;
+}
+
+.morph-button-fixed.open .morph-content {
+	opacity: 1;
+}
+
+.morph-button-fixed .morph-content>div {
+	visibility: hidden;
+	height: 0;
+	opacity: 0;
+	-webkit-transition: opacity 0.1s, visibility 0s 0.1s, height 0s 0.1s;
+	transition: opacity 0.1s, visibility 0s 0.1s, height 0s 0.1s;
+}
+
+.morph-button-fixed.open .morph-content>div {
+	visibility: visible;
+	height: auto;
+	opacity: 1;
+	-webkit-transition: opacity 0.3s 0.5s;
+	transition: opacity 0.3s 0.5s;
+}
+
+.morph-button-fixed.active>button {
+	z-index: 2000;
+}
+
+.morph-button-fixed.active .morph-content {
+	z-index: 1900;
+}
+
+.morph-button-modal.open .morph-content {
+	top: 50% !important;
+	left: 50% !important;
+	margin: -210px 0 0 -300px;
+	width: 600px;
+	height: 420px;
+	-webkit-transition: width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s,
+		left 0.4s 0.1s, margin 0.4s 0.1s;
+	transition: width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s
+		0.1s, margin 0.4s 0.1s;
+}
+
+.morph-button.morph-button-modal-2, .morph-button.morph-button-modal-3 {
+	display: inline-block;
+	margin: 10px 15px;
+	float: right;
+}
+
+.morph-button-modal-1>button, .morph-button-modal-1 .morph-content {
+	background-color: #553445;
+}
+
+.morph-button-modal-2>button, .morph-button-modal-2 .morph-content,
+	.morph-button-modal-3>button, .morph-button-modal-3 .morph-content {
+	background-color: #fff;
+	color: #e75854;
+	border: 1px solid #e8e8e8;
+}
+
+.morph-button-modal-2.open .morph-content {
+	margin: -246px 0 0 -220px;
+	width: 441px;
+	height: 491px;
+	border-radius: 5px;
+	color: #666;
+	border: 1px solid #838383;
+	padding: 0 14px 30px 14px;
+	background: #fff;
+}
+
+.morph-button-modal-2.open .morph-content>div, .morph-button-modal-3.open .morph-content>div
+	{
+	-webkit-transition: opacity 0.3s 0.3s;
+	transition: opacity 0.3s 0.3s;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup,
+	main, nav, section, summary {
+	display: block;
+}
+/*自己加的*/
+.xgaj{
+	width: 110px;
+	height: 34px;
+	font-size: 14px;
+	color: #555;
+	border: 1px solid #e8e8e8;
+	line-height: 1px;
+}
+#tcbt{
+	margin: 0 auto;
+	width: 412px;
+	height: 42px;
+	padding-top:13px; 
+	font-size: 15px;
+    color: #1e1e1e;
+    line-height: 42px;
+    border-bottom: 1px solid #e6e6e6; 
+}
+#xgcl{
+	color: #555;
+}
+#xgcl:hover {
+	color: #ff7e00;
+}
+body {
+	font-family: arial, "Hiragino Sans GB", "Microsoft YaHei", "微軟正黑體",
+		"儷黑 Pro", sans-serif;
+}
+
+li {
+	list-style-type: none;
+}
+
+#big {
+	width: 100%;
+	height: 100%;
+}
+
+header {
+	width: 960px;
+	margin: 0 auto;
+}
+
+.jg_tou {
+	width: 960px;
+	height: 31px;
+	padding: 50px 0;
+}
+
+a {
+	text-decoration: none;
+	text-align: center;
+}
+
+#tc:hover {
+	color: #ff7e00;
+}
+
+.jg_tou>.cscl {
+	font-size: 14px;
+	color: #ababab;
+	float: right;
+	width: 28px;
+	height: 31px;
+	text-align: center;
+	line-height: 31px;
+}
+
+.xgx:hover {
+	color: #ff7e00;
+}
+
+.xgx {
+	float: left;
+	color: #333;
+	padding: 0 34px;
+	font-size: 14px;
+	line-height: 20px;
+	height: 20px;
+	overflow: hidden;
+	font-weight: bold;
+}
+
+#hzh {
+	color: #ff7e00;
+}
+
+#jg_bt>ul li {
+	float: left;
+	text-align: center;
+	max-width: 25%;
+	height: 44px;
+	overflow: hidden;
+}
+
+#jg_bt>ul {
+	width: 73%;
+	overflow: hidden;
+	padding: 0;
+	margin: 0;
+}
+
+#jg_bt {
+	overflow: hidden;
+	position: relative;
+	width: 960px;
+	height: 44px;
+	margin: 0 auto;
+}
+
+.touxiang {
+	position: absolute;
+	width: 222px;
+	height: 92px;
+	right: 7%;
+	top: -13%;
+}
+
+#mz p {
+	color: #999;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 1.5;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	margin: 0px;
+	text-align: right;
+}
+
+#bianhao {
+	line-height: 1.2;
+}
+
+#mz {
+	padding-top: 16px;
+	margin-right: 10px;
+	width: 120px;
+}
+
+.dy {
+	z-index: 50;
+	position: absolute;
+	width: 92px;
+	height: 92px;
+	right: 0px;
+	top: 0px;
+	border-radius: 50%;
+	border: 2px solid #e3e3e3;
+	background-color: #fff;
+}
+
+.xy {
+	z-index: 51;
+	overflow: hidden;
+	background: url(../touxiang/moren.png);
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	position: absolute;
+	top: 7%;
+	left: 7%;
+}
+
+#zhengwen {
+	width: 890px;
+	margin: 0 auto;
+	border: 1px solid #e6e6e6;
+	position: relative;
+	padding: 34px 34px 0 34px;
+}
+
+article {
+	position: relative;
+}
+
+#xjj {
+	width: 20px;
+	height: 20px;
+	transform: rotate(45deg);
+	border-left: 1px solid #e6e6e6;
+	border-top: 1px solid #e6e6e6;
+	position: absolute;
+	left: 5%;
+	top: -2%;
+	background: #fff;
+}
+
+#ljaqdj {
+	display: inline-block;
+	font-size: 20px;
+	color: #333;
+	line-height: 1.5;
+	font-weight: bold;
+	margin: 0;
+	padding: 0;
+}
+
+p {
+	margin: 0;
+	padding: 0;
+	display: inline-block;
+}
+
+#aqdj {
+	width: 890px;
+	height: 30px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #e6e6e6;
+	position: relative;
+}
+
+#djpf {
+	font-size: 14px;
+	color: #9d9d9d;
+	line-height: 1.5;
+	display: inline-block;
+	padding-left: 10px;
+}
+
+#djpf>p {
+	font-size: 20px;
+	font-weight: bold;
+	color: red;
+}
+/*进度条*/
+/*滑道样式*/
+.container {
+	padding: 0px;
+	width: 360px;
+	display: inline-block;
+	position: relative;
+	bottom: -40%;
+}
+
+#slide {
+	width: 400px;
+	height: 4px;
+	background: #FFF;
+	border-radius: 5px;
+	border: 1px solid #e6e6e6;
+	position: relative; /*相对定位*/
+	z-index: 0;
+	margin: 0;
+}
+/*滑块*/
+#slideBlock {
+	width: 15px;
+	height: 15px;
+	background: #FFF;
+	border: 1px solid #e6e6e6;
+	position: absolute; /*绝对定位*/
+	border-radius: 50%;
+	display: inline-block; /*显示为行内块元素*/
+	z-index: 2;
+	left: -10px;
+}
+
+#beijingse {
+	display: inline-block;
+	position: absolute;
+	left: 0;
+	z-index: 0;
+	border-radius: 10px;
+}
+
+#czfx {
+	font-size: 14px;
+	color: #9d9d9d;
+	line-height: 1.5;
+	margin-left: 60px;
+}
+
+#czfx>p {
+	color: red;
+	font-size: 20px;
+	font-weight: bold;
+	padding: 0 2px;
+}
+
+#aqul {
+	width: 890px;
+	margin: 0px;
+	padding: 0px;
+}
+
+#aqul li {
+	width: 890px;
+	height: 45px;
+	padding: 30px 0;
+	border-bottom: 1px solid #f2f2f2;
+}
+
+.aqbt {
+	display: inline-block;
+	color: #555;
+	font-size: 16px;
+	line-height: 1.5;
+	font-weight: bold;
+	position: absolute;
+	top: 0%;
+}
+
+.aqzw {
+	font-size: 14px;
+	color: #9d9d9d;
+	line-height: 1.5;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	width: 680px;
+	white-space: nowrap;
+	display: inline-block;
+	position: absolute;
+	bottom: 0%;
+}
+
+.dtb {
+	width: 40px;
+	height: 40px;
+}
+
+.aqn {
+	height: 45px;
+	position: relative;
+}
+
+.xgan {
+	display: inline-block;
+	line-height: normal !important;
+	color: #555;
+	border: 1px solid #e8e8e8;
+	padding: 7px 40px;
+	background: #fff;
+	overflow: visible;
+	cursor: pointer;
+	margin-right: 0px;
+	font-size: 14px;
+	position: absolute;
+	right: 0%;
+	bottom: 0%;
+}
+
+.xgan:hover {
+	color: #ff7e00;
+}
+/*尾*/
+footer {
+	text-align: center;
+}
+
+#yyxz {
+	font-size: 14px;
+	color: #757575;
+	overflow: hidden;
+}
+
+#yyxz>ul>li {
+	display: inline-block;
+	border-right: 2px solid #757575;
+	height: 18px;
+}
+
+#yyxz>ul>li a {
+	padding: 0 10px;
+}
+
+#jtli>a {
+	color: #333;
+}
+
+#yyxz>ul>li a:hover {
+	color: #333;
+}
+
+#diwen {
+	color: #9d9d9d;
+	text-align: center;
+	font-size: 14px;
+}
+.morph-content{
+	position: relative;
+}
+.yzmdiv{
+	position: absolute;
+	right: 16%;
+	bottom: 16%;
+	width: 100px;
+}
+.yzmip{
+	padding: 10px;
+	border: 2px solid #ebd3bd;
+}
+#aqyxin{
+	width:334px;
+	padding: 10px;
+	border: 2px solid #ebd3bd;
+}
+#yxyzdiv{
+bottom: 24%;
+right: 10%;
+}
+#aqyxtcc{
+	height: 300px;
+}
+#aqsjipt{
+	width:334px;
+	padding: 10px;
+	border: 2px solid #ebd3bd;
+}
+#aqsjyzm{
+bottom: 24%;
+right: 10%;
+}
+#aqsjxgbox{
+	height: 290px;
+}
+.mbwt{
+	padding: 10px;
+	border: 2px solid #ebd3bd;
+}
+#zwtouxiang{
+	position: absolute;
+    width: 260px;
+    height: 125px;
+    padding: 80px 20px 0 20px;
+    text-align: center;
+}
+#zwdy{
+	z-index: 50;
+    width: 92px;
+    height: 92px;
+    border-radius: 50%;
+    border: 2px solid #e3e3e3;
+    background-color: #fff;
+	position: relative;
+	margin: 0 auto;
+}
+#zwxy{
+	z-index: 51;
+    overflow: hidden;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    position: absolute;
+    top: 7%;
+    left: 7%;
+}
+#sztxa{
+	font-size: 14px;
+	color: #666;
+}
+#sztxa:hover {
+	color: #ff7e00;
+}
+#sztxadiv{
+	padding-top: 15px;
+}
+#jgzl{
+	padding-top:15px;
+	width: 590px;
+	height: 160px;
+	float: right;
+}
+#jgzl h3{
+	margin:0px;
+	font-size: 16px;
+    color: #333;
+    line-height: 40px;
+}
+.zlzj{
+	color: #666;
+	font-size: 14px;
+	padding-left: 20px;
+    line-height: 40px;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+.zlkj{
+	width: 392px;
+	height: 42px;
+	padding-bottom:10px; 
+    font-size: 14px;
+    font-weight: bold;
+ 	line-height: 42px;
+ 	color: #666;
+ 	margin: 0;
+}
+.inname{
+	padding: 10px;
+	width: 256px;
+	border: 2px solid #ebd3bd;
+}
+.jgdate{
+	width: 91px;
+	border: 2px solid #ebd3bd;
+	height: 40px;
+	background: white;
+}

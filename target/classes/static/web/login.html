@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>登录页面</title>
+<script type="text/javascript" src="../jquery/jquery-3.4.1.min.js"></script>
+<style type="text/css">
+body {
+	margin: 0;
+}
+
+a {
+	text-decoration: none;
+	color: #666;
+}
+
+a:hover {
+	color: #f56600;
+}
+
+header {
+	width: 1130px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+header>div {
+	float: left;
+}
+
+#hs1 {
+	display: inline-block;
+	margin-top: 15px;
+	font-size: 36px;
+	font-variant: inherit;
+	font-size: 36px;
+}
+
+#hs2 {
+	font-size: 12px;
+}
+
+header>div>a>img {
+	display: inline-block;
+	margin: 20px 20px 20px 0;
+	float: left;
+}
+
+header>div>a {
+	display: inline-block;
+	overflow: hidden;
+}
+
+header>div>a>span {
+	float: left;
+}
+
+article {
+	background: url("../imgs/loginbg.jpg");
+	background-repeat: no-repeat;
+	position: relative;
+	height: 584px;
+	margin: 0 auto;
+	background-size: cover; 
+}
+
+#login {
+	background-color: #fff;
+	width: 360px;
+	overflow: hidden;
+	position: absolute;
+	height: 400px;
+	left: 940px;
+	top: 29px;
+	
+}
+
+#logind1 {
+	padding: 27px 0 24px;
+	text-align: center;
+	font-size: 24px;
+}
+
+#logind1>span {
+	margin: 0 36px;
+}
+
+.np {
+	width: 306px;
+	height: 22px;
+	color: #333;
+	line-height: 22px;
+	padding: 13px 16px 13px 14px;
+	display: block;
+	border-color: #eee;
+	margin: 14px auto;
+}
+
+#sub {
+	background-color: #ef5b00;
+	width: 340px;
+	height: 50px;
+	line-height: 50px;
+	display: block;
+	margin: 14px auto;
+	text-align: center;
+	font-size: 14px;
+	color: #fff;
+}
+
+#logind3 {
+	width: 340px;
+	overflow: hidden;
+	position: relative;
+	margin: 0 auto;
+}
+
+#logind3>a {
+	font-size: 14px;
+}
+
+#logind3a1 {
+	float: left;
+}
+
+#logind3a2 {
+	float: right;
+}
+
+footer {
+	margin-top: 50px;
+}
+
+footer span {
+	margin: 0 8px;
+}
+
+footer>div {
+	text-align: center;
+}
+
+footer p {
+	margin: 10px auto;
+	font-size: 14px;
+	text-align: center;
+}
+
+#slea {
+	color: #f56600;
+}
+
+.form-control {
+	width:  100%;;
+	height: 40px;
+	margin: 0 auto;
+	 background: #e1dcd8;
+    color: rgb(98,94,91);
+    box-shadow: inset 0px 2px 5px #aaaaaa;
+    border-radius: 5px;
+}
+.form-group{
+margin-top: 20px; 
+
+}
+</style>
+</head>
+<body>
+	<header>
+		<div>
+			<a href="../index.html"> <img src="../imgs/logo-footer.png"> <span
+				id="hs1">小米商城</span><br> <span id="hs2">让每个人都享受科技的乐趣</span>
+			</a>
+		</div>
+	</header>
+
+	<article>
+		<div id="login">
+			<div id="logind1">
+			<a href="login.html" id="slea">账号登录</a> <span>|</span> <a href="phonelogin.html">手机登录</a>
+			</div>
+			<div id="logind2">
+				<form id="login-form" action="index.html" method="post"
+					class="form-horizontal" role="form">
+					<!--用户名-->
+					<div class="form-group">
+						<!-- <label for="username" class="col-md-3 control-label">名字：</label> -->
+						<div class="col-md-8">
+							<input name="username" type="text" class="form-control"
+								id="username" placeholder="请输入用户名">
+						</div>
+					</div>
+					<!--密码-->
+					<div class="form-group">
+						<!-- <label for="pwd" class="col-md-3 control-label"> 密码：</label> -->
+						<div class="col-md-8">
+							<input name="password" type="password" class="form-control" id="pwd"
+								placeholder="请输入密码">
+						</div>
+					</div>
+					<!-- 			<div class="col-md-8">
+							<input name="checknum" type="text" class="form-control" id="pwd" placeholder="请输入验证码">
+						   <input type="text" id="checkCode" class="form-control" placeholder="请输入验证码" required autofocus name="checkCode">
+						</div>
+					<div style="height: 30px">
+						<img alt="" src="../imgs/1.png">
+							<img src="pictureCheckCode" id="CreateCheckCode" align="middle" style="margin-top:4px;" onclick="myReload()"> 
+        
+        <a href="#"  onclick="myReload()" style="font-size:12px;color:blue;margin-right:10px;">看不清,换一个</a>
+					</div> -->
+					<!-- 记住我-->
+					<!-- 	<div class="form-group">
+						<div class="col-md-offset-3 col-md-6">
+							<div class="checkbox">
+								<label>
+									<input type="checkbox"id="rememberMe" name="rememberMe" value="true" >自动登录
+								</label>
+							</div>
+						</div>
+					</div> -->
+					<!--提交按钮-->
+					<div class="form-group">
+						<label class="col-md-3 control-label"></label>
+						<div class="col-md-8">
+							<input id="btn-login" class="btn btn-primary"
+								style="background-color: #ef5b00; width: 100%; height: 50px; line-height: 50px; display: block; margin-bottom: 14px; text-align: center; font-size: 14px; color: #fff; cursor: pointer"
+								type="button" value="登录" /> <span class="pull-right"><small>还没有账号？</small><a
+								href="reg.html">注册</a><span> </span><a href="spwd.html">忘记密码</a></span>
+						</div>
+					</div>
+
+				</form>
+			</div>
+			<div id="logind4"></div>
+		</div>
+	</article>
+	<footer>
+		<div>
+			<a href="#">简体</a><span>|</span> <a href="#">繁体</a><span>|</span> <a
+				href="#">English</a><span>|</span> <a href="#">常见问题</a><span>|</span>
+			<a href="#">隐私</a>
+		</div>
+		<p>
+			小米公司版权所有-京ICP备10046444-<img src="../imgs/ghs.png">京公网安备11010802020134号-京ICP证110507号
+		</p>
+	</footer>
+
+	<script type="text/javascript">
+		function myReload() {
+			document.getElementById("CreateCheckCode").src = document
+					.getElementById("CreateCheckCode").src
+					+ "?nocache=" + new Date().getTime();
+		}
+	</script>
+	<script type="text/javascript">
+		$("#btn-login").click(function() {
+			// 验证数据格式
+
+			var url = "/user/login";
+			var data = $("#login-form").serialize();
+			console.log("提交的数据：" + data);
+			$.ajax({
+				"url" : url,
+				"data" : data,
+				"type" : "POST",
+				"dataType" : "json",
+				"success" : function(json) {
+					if (json.state == 200) {
+						//	var user = json.data;
+
+						alert("登录成功！");
+
+						location.href = "../index.html";
+						$.cookie("username",json.data.username,{expire: 7});
+						$.cookie("userimg",json.data.userimg,{expire:7});
+					} else if (json.state == 401) {
+						// 用户名错误
+						alert("登录失败！" + json.message);
+					} else if (json.state == 402) {
+						// 密码错误
+						alert("登录失败！" + json.message);
+					}
+				}
+			});
+		});
+	</script>
+</body>
+</html>

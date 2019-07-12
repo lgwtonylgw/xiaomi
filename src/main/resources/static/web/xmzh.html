@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>小米账号</title>
+    <link rel="stylesheet" href="../css/xmzh/component.css">
+    <link rel="stylesheet" href="../css/xmzh/content.css">
+    <script type="text/javascript" src="../js/xmzh/modernizr.custom.js"></script>
+    <script type="text/javascript" src="../js/xmzh/classie.js"></script>
+    <script type="text/javascript" src="../js/xmzh/uiMorphingButton_fixed.js"></script>
+    <script type="text/javascript" src="../jquery/jquery-3.4.1.min.js"></script>
+
+</head>
+<body id="big">
+<header>
+    <div class="jg_tou">
+        <a href="../index.html"> <img alt="" src="../imgs/xmzh.png">
+        </a> <a href="/user/exit" class="cscl" id="tc">退出</a>
+    </div>
+
+</header>
+<article>
+    <div id="jg_bt">
+        <ul>
+            <li><a href="xmzh.html" class="xgx" id="hzh">帐号安全</a></li>
+            <li><a href="grxx.html" class="xgx">个人信息</a></li>
+            <li><a href="#" class="xgx">绑定授权</a></li>
+            <li><a href="#" class="xgx">小米服务</a></li>
+        </ul>
+    </div>
+    <div id="zhengwen">
+        <div id="aqdj">
+            <h4 id="ljaqdj">安全等级</h4>
+            <span id="djpf"><p style="color: green">100</p>分</span>
+            <div class="container">
+                <div id="slide"  >
+                    <span id="slideBlock"></span>
+                </div>
+            </div>
+            <span id="czfx">存在
+					<p style="color: green">0</p>项风险
+				</span>
+        </div>
+        <ul id="aqul">
+            <li>
+                <div id="zhmm">
+                    <div class="aqn">
+                        <img alt="" src="../imgs/zhmm.png" class="dtb">
+                        <p class="aqbt">帐号密码</p>
+                        <p class="aqzw">用于保护帐号信息和登录安全</p>
+                        <div
+                                class="morph-button morph-button-modal morph-button-modal-2 morph-button-fixed">
+                            <button type="button" class="xgaj">
+                                <a id="xgcl">修改</a>
+                            </button>
+                            <div class="morph-content" style="height: 480px;">
+                                <div>
+                                    <div class="content-style-form content-style-form-1">
+                                        <span class="icon icon-close">Close the dialog</span>
+                                        <h4 id="tcbt">修改密码</h4>
+
+
+                                        <form action="" >
+                                            <p>
+                                                <label>原密码</label><input type="password"
+                                                                         placeholder="输入原密码" name="oldPassword"  id="oldPassword"/>
+                                                <br>
+                                            <p id="oldTips" style="font-size: 14px;color: red"></p>
+                                            </p>
+                                            <p>
+                                                <label>新密码</label><input type="password"
+                                                                         placeholder="输入新密码"  name="newPassword" id="newPassword"/>
+                                            </p>
+                                            <p id="newTips" style="font-size: 14px;color: red"></p>
+                                            <p>
+                                                <input type="password" placeholder="重复新密码" name="rePassword" id="rePassword">
+                                            </p>
+                                            <p id="reTips" style="font-size: 14px;color: red"></p><br>
+                                            <p>密码长度8~16位，数字、字母、字符至少包含两种</p>
+                                            <br>
+                                            <p>
+                                                <label>验证码</label>
+                                            <p id="codeTips" style="font-size: 14px;color: red"></p><br>
+                                            <div class="yzmdiv">
+                                                <img src="pictureCheckCode" id="CreateCheckCode"
+                                                     align="middle" style="margin-top: 4px;"
+                                                     onclick="myReload()">
+                                            </div>
+                                            </p>
+                                            <br>
+                                            <p>
+                                                <input placeholder="请输入验证码" class="yzmip" name="verificationCode"
+                                                       id="vfcode">
+                                            </p>
+                                            <br>
+                                            <p>
+                                                <button type="button" id="btn-changepwd">确认</button>
+                                            </p>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div id="aqyx">
+                    <div class="aqn">
+                        <img alt="" src="../imgs/aqyx.png" class="dtb">
+                        <p class="aqbt">安全邮箱</p>
+                        <p class="aqzw">安全邮箱可用于登录小米账号和重置密码</p>
+                        <div
+                                class="morph-button morph-button-modal morph-button-modal-2 morph-button-fixed">
+                            <button type="button" class="xgaj">
+                                <a id="xgcl">绑定</a>
+                            </button>
+                            <div class="morph-content" id="aqyxtcc">
+                                <div>
+                                    <div class="content-style-form content-style-form-1">
+                                        <span class="icon icon-close">Close the dialog</span>
+                                        <h4 id="tcbt">绑定安全邮箱</h4>
+
+
+                                        <form action="">
+                                            <p>
+                                                <label>输入新的安全邮箱地址</label><input
+                                                    placeholder="请输入邮箱"  id="aqyxin"/>
+                                            </p>
+                                            <br>
+                                            <p>
+                                                <label>验证码</label><p style="font-size: 14px;color: red" id="emailTips"></p>
+                                            <div class="yzmdiv"  id="yxyzdiv">
+                                                <img src="pictureCheckCode" id="CreateCheckCode1"
+                                                     align="middle" style="margin-top: 4px;"
+                                                     onclick="myReload1()">
+                                            </div>
+                                            </p>
+                                            <br>
+                                            <p>
+                                                <input placeholder="请输入验证码" class="yzmip" id="emailCode">
+                                            </p>												<br>
+                                            <p>
+                                                <button type="button" id="email-but">确认</button>
+                                            </p>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div id="aqsj">
+                    <div class="aqn">
+                        <img alt="" src="../imgs/aqsj.png" class="dtb">
+                        <p class="aqbt" id="ansj">安全手机</p>
+                        <p class="aqzw">安全手机可用于登录小米账号和重置密码</p>
+                        <div
+                                class="morph-button morph-button-modal morph-button-modal-2 morph-button-fixed">
+                            <button type="button" class="xgaj">
+                                <a id="xgcl">修改</a>
+                            </button>
+                            <div class="morph-content" id="aqsjxgbox">
+                                <div>
+                                    <div class="content-style-form content-style-form-1">
+                                        <span class="icon icon-close">Close the dialog</span>
+                                        <h4 id="tcbt">修改安全手机</h4>
+
+
+                                        <form>
+                                            <p>
+                                                <label>请输入新的安全手机号码</label><input
+                                                    placeholder="输入手机号码"  id="aqsjipt"/>
+                                            </p>
+                                            <br>
+                                            <p>
+                                                <label>验证码</label><p style="font-size: 14px;color: red" id="phoTips"></p>
+                                            <div class="yzmdiv"  id="aqsjyzm">
+                                                <img src="pictureCheckCode" id="CreateCheckCode2"
+                                                     align="middle" style="margin-top: 4px;"
+                                                     onclick="myReload2()">
+                                            </div>
+                                            </p>
+                                            <br>
+                                            <p>
+                                                <input placeholder="请输入验证码" class="yzmip" id="phoCode">
+                                            </p>
+
+                                            <br>
+                                            <p>
+                                                <button id="phone-but" type="button">确认</button>
+                                            </p>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div id="zhmm">
+                    <div class="aqn">
+                        <img alt="" src="../imgs/mbwt.png" class="dtb">
+                        <p class="aqbt">密保问题</p>
+                        <p class="aqzw">密保问题用于安全验证</p>
+                        <div
+                                class="morph-button morph-button-modal morph-button-modal-2 morph-button-fixed">
+                            <button type="button" class="xgaj">
+                                <a id="xgcl">设置</a>
+                            </button>
+                            <div class="morph-content" style="height: 365px;">
+                                <div>
+                                    <div class="content-style-form content-style-form-1">
+                                        <span class="icon icon-close">Close the dialog</span>
+                                        <h4 id="tcbt">设置密保问题</h4>
+
+
+                                        <form id="question-form">
+                                            <p>
+                                                <label>请输入密保问题1</label><input name="questionone"
+                                                    placeholder="请输入第一个问题"  class="mbwt" style="padding: 10px 0;border: 2px solid #ebd3bd;" id="que1"/>
+                                            </p>
+                                            <p>
+                                                <label>请输入答案</label><input name="answerone"
+                                                    placeholder="请输入答案一"  class="mbwt" style="padding: 10px 0;border: 2px solid #ebd3bd;" id="ans1"/>
+                                            </p>
+                                            <p>
+                                                <label>请输入密保问题2</label><input name="questiontwo"
+                                                    placeholder="请输入第二个问题"  class="mbwt" style="padding: 10px 0;border: 2px solid #ebd3bd;" id="que2"/>
+                                            </p>
+                                            <p>
+                                                <label>请输入答案</label><input name="answertwo"
+                                                    placeholder="请输入答案二"  class="mbwt" style="padding: 10px 0;border: 2px solid #ebd3bd;" id="ans2"/>
+                                            </p>
+                                            <p>
+                                                <label>请输入密保问题3</label><input name="questionthree"
+                                                    placeholder="请输入第三个问题"  class="mbwt" style="padding: 10px 0;border: 2px solid #ebd3bd;" id="que3"/>
+                                            </p>
+                                            <p>
+                                                <label>请输入答案</label><input name="answerthree"
+                                                    placeholder="请输入答案三"  class="mbwt"  style="padding: 10px 0;border: 2px solid #ebd3bd;" id="ans3"/>
+                                            </p>
+                                            <p>
+                                                <button type="button" id="question-btn">确定</button>
+                                            </p>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <div id="xjj"></div>
+        <div class="touxiang">
+            <div id="mz">
+                <p id="nickp"></p>
+                <p id="bianhao">22007133172</p>
+            </div>
+            <div class="dy">
+                <div class="xy" >
+                    <img id="imgtou" src="../imgs/1.png" style="width: 80px; height: 80px;">
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+<footer>
+    <div id="yyxz">
+        <ul>
+            <li id="jtli"><a>简体</a></li>
+            <li><a>繁体</a></li>
+            <li><a>English</a></li>
+            <li><a>常见问题</a></li>
+        </ul>
+    </div>
+    <p id="diwen">
+        小米公司版权所有-京ICP备10046444-<img alt="" src="../imgs/jh.png"><img
+            alt="" src="../imgs/jh.png">京公网安备11010802020134号-京ICP证110507号
+    </p>
+</footer>
+<script>
+    /*进度条*/
+    var num =100;
+    var myslideW = document.getElementById("slide").clientWidth;
+    var myslideH = document.getElementById("slide").clientHeight;
+    console.log(myslideW)
+    var myslideBlockH = document.getElementById("slideBlock").clientHeight;
+    var h = (myslideH - myslideBlockH) / 2 + "px";
+    document.getElementById("slideBlock").style.position = "relative";
+    document.getElementById("slideBlock").style.top = h;
+    function marginL(index) {
+        document.getElementById("slideBlock").style.marginLeft = index * 4
+            / myslideW * 100 + "%";
+        console.log(index * 4 / myslideW * 100 + "%")
+        var ospan = document.createElement("span");
+        ospan.id = "beijingse";
+        ospan.style.width = index * 4/ myslideW * 100 + "%";
+        ospan.style.height = myslideH + "px";
+        document.getElementById("slide").appendChild(ospan)
+    }
+    if (num == 100) {
+        document.getElementById("slide").style.background = "${tipcoloer}";
+        document.getElementById("slideBlock").style.marginLeft = num * 4
+            / myslideW * 100 + "%";
+    } else {
+        marginL(num);
+    }
+    /*  弹出层*/
+    (function() {
+        var docElem = window.document.documentElement, didScroll, scrollPosition;
+
+        // trick to prevent scrolling when opening/closing button
+        function noScrollFn() {
+            window.scrollTo(scrollPosition ? scrollPosition.x : 0,
+                scrollPosition ? scrollPosition.y : 0);
+        }
+
+        function noScroll() {
+            window.removeEventListener('scroll', scrollHandler);
+            window.addEventListener('scroll', noScrollFn);
+        }
+
+        function scrollFn() {
+            window.addEventListener('scroll', scrollHandler);
+        }
+
+        function canScroll() {
+            window.removeEventListener('scroll', noScrollFn);
+            scrollFn();
+        }
+
+        function scrollHandler() {
+            if (!didScroll) {
+                didScroll = true;
+                setTimeout(function() {
+                    scrollPage();
+                }, 60);
+            }
+        }
+        ;
+
+        function scrollPage() {
+            scrollPosition = {
+                x : window.pageXOffset || docElem.scrollLeft,
+                y : window.pageYOffset || docElem.scrollTop
+            };
+            didScroll = false;
+        }
+        ;
+
+        scrollFn();
+
+        [].slice.call(document.querySelectorAll('.morph-button')).forEach(
+            function(bttn) {
+                new UIMorphingButton(bttn, {
+                    closeEl : '.icon-close',
+                    onBeforeOpen : function() {
+                        // don't allow to scroll
+                        noScroll();
+                    },
+                    onAfterOpen : function() {
+                        // can scroll again
+                        canScroll();
+                    },
+                    onBeforeClose : function() {
+                        // don't allow to scroll
+                        noScroll();
+                    },
+                    onAfterClose : function() {
+                        // can scroll again
+                        canScroll();
+                    }
+                });
+            });
+
+        // for demo purposes only
+        [].slice.call(document.querySelectorAll('form button')).forEach(
+            function(bttn) {
+                bttn.addEventListener('click', function(ev) {
+                    ev.preventDefault();
+                });
+            });
+    })();
+    /* 验证码 */
+    function myReload() {
+        document.getElementById("CreateCheckCode").src = document
+                .getElementById("CreateCheckCode").src
+            + "?nocache=" + new Date().getTime();
+    }
+    function myReload1() {
+        document.getElementById("CreateCheckCode1").src = document
+                .getElementById("CreateCheckCode1").src
+            + "?nocache=" + new Date().getTime();
+    }
+    function myReload2() {
+        document.getElementById("CreateCheckCode2").src = document
+                .getElementById("CreateCheckCode2").src
+            + "?nocache=" + new Date().getTime();
+    }
+    $("#rePassword").blur(function(){
+        if($("#newPassword").val()!=$("#rePassword").val()){
+            $("#reTips").text("密码不一致")
+        }else{
+            $("#reTips").empty();
+        }
+    })
+    /*密码修改*/
+    $("#btn-changepwd").click(function(){
+        var oldpwd=$("#oldPassword").val();
+        var newpwd=$("#newPassword").val();
+        var repwd=$("#rePassword").val();
+        var vfcode=$("#vfcode").val();
+        $("#oldTips").empty();
+        $("#newTips").empty();
+        $("#reTips").empty();
+        $("#codeTips").empty();
+        $.ajax({
+            "url":"/user/changepassword",
+            "data":"oldPassword="+oldpwd+"&newPassword="+newpwd+"&vfcode="+vfcode,
+            "type":"POST",
+            "dataType":"json",
+            "success":function(json){
+                if(json.state==200){
+                    alert("修改成功，请重新登录");
+                    location.href="login.html";
+                }else if(json.state==402){
+                    $("#oldTips").html(json.message);
+                }else if(json.state==501){
+                   alert(json.message);
+                }else if(json.state==401){
+                   alert(json.message);
+                }else if(json.state==406){
+                    $("#codeTips").html(json.message);
+                }else{
+                    alert("发生未知错误")
+                }
+            },
+            "error":function () {
+                alert("登陆已过期，请重新登陆");
+                location.href="login.html";
+            }
+        });
+    });
+    /*邮箱修改*/
+    $("#email-but").click(function(){
+        var email=$("#aqyxin").val();
+        var vfcode=$("#emailCode").val();
+        $("#emailTips").empty();
+        $.ajax({
+            "url":"/user/changeemail",
+            "data":"email="+email+"&vfcode="+vfcode,
+            "type":"POST",
+            "dataType":"json",
+            "success":function(json){
+                if(json.state==200){
+                    alert("修改成功！");
+                    location.href="xmzh.html";
+                }else if(json.state==401){
+                    $("#emailTips").html(json.message);
+                }else if(json.state==501){
+                    alert(json.message);
+                }else if(json.state==406){
+                    alert(json.message);
+                }else{
+                    alert("发生未知错误！");
+                }
+            },
+            "error":function () {
+                alert("登陆已过期，请重新登陆");
+                location.href="login.html";
+            }
+        });
+    });
+    /*手机修改*/
+    $("#phone-but").click(function(){
+        var phone=$("#aqsjipt").val();
+        var vfcode=$("#phoCode").val();
+        $("#phoTips").empty();
+        $.ajax({
+            "url":"/user/changephone",
+            "data":"phone="+phone+"&vfcode="+vfcode,
+            "type":"POST",
+            "dataType":"json",
+            "success":function(json){
+                if(json.state==200){
+                    alert("修改成功！");
+                    location.href="xmzh.html";
+                }else if(json.state==401){
+                   alert(json.message);
+                }else if(json.state==501){
+                    alert(json.message);
+                }else if(json.state==406){
+                    alert(json.message);
+                }else{
+                    alert("发生未知错误！");
+                }
+            },
+            "error":function () {
+                alert("登陆已过期，请重新登陆");
+                location.href="login.html";
+            }
+        });
+    });
+    /*密保问题*/
+    $("#question-btn").click(function(){
+        var questionone=$("#que1").val();
+        var questiontwo=$("#que2").val();
+        var questionthree=$("#que3").val();
+        var answerone=$("#ans1").val();
+        var answertwo=$("#ans2").val();
+        var answerthree=$("#ans3").val();
+        $.ajax({
+            "url":"/user/changequestion",
+            "data":$("#question-form").serialize(),
+            "type":"POST",
+            "dataType":"json",
+            "success":function(json){
+                if(json.state==200){
+                    alert("修改成功！");
+                    location.href="xmzh.html";
+                }else if(json.state==401){
+                    alert(json.message);
+                }else if(json.state==501){
+                    alert(json.message);
+                }else{
+                    alert("发生未知错误！");
+                }
+            },
+            "error":function () {
+                alert("登陆已过期，请重新登陆");
+                location.href="login.html";
+            }
+        });
+    });
+    $(function () {
+        $.ajax({
+            "url":"/user/grxx",
+            "type":"GET",
+            "dataType":"json",
+            "success":function (json) {
+                $("#imgtou").attr("src",json.data.userimg);
+                $("#nickp").text(json.data.nickname);
+            },
+            "error":function () {
+                alert("您的登陆已过期，请重新登陆!")
+                location.href="login.html";
+            }
+        });
+    });
+</script>
+</body>
+</html>

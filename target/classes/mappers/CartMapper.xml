@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.tedu.xiaomi.mapper.CartMapper">
+    <insert id="insert" useGeneratedKeys="true" keyProperty="cid">
+        INSERT INTO
+          t_cart (
+          uid,gid,num,created_time,created_user,modified_time,modified_user
+          ) VALUES
+         ( #{uid},#{gid},#{num},#{createdTime},#{createdUser},#{modifiedTime},#{modifiedUser})
+    </insert>
+    <update id="updateNum">
+        UPDATE
+        t_cart
+        SET
+        num=#{num},modified_time=#{modifiedTime},modified_user=#{modifiedUser}
+        WHERE
+        cid=#{cid}
+    </update>
+    <select id="findByUidAndGid" resultType="cn.tedu.xiaomi.entity.Cart">
+        SELECT
+        cid,num
+        FROM
+        t_cart
+        WHERE
+        uid=#{uid} AND gid=#{gid}
+    </select>
+    <select id="findByUid" resultType="cn.tedu.xiaomi.vo.CartVO">
+        SELECT cid,gid,image,t_cart.num,price,title
+        FROM t_cart
+        INNER JOIN
+        t_goods
+        ON t_cart.gid=t_goods.id
+        WHERE
+        uid=#{uid}
+        ORDER BY
+        t_cart.created_time DESC;
+    </select>
+    <select id="findByCids" resultType="cn.tedu.xiaomi.vo.CartVO">
+        SELECT cid,gid,title,image,price,t_cart.num
+        FROM t_cart
+        INNER JOIN t_goods
+        ON t_cart.gid=t_goods.id
+        WHERE cid IN
+        <foreach collection="array" item="cid" separator="," open="(" close=")">
+            #{cid}
+        </foreach>
+        ORDER BY
+        t_cart.created_time DESC
+    </select>
+    <select id="findByCid" resultType="cn.tedu.xiaomi.entity.Cart">
+        SELECT uid,num
+        FROM
+        t_cart
+        WHERE
+        cid=#{cid}
+    </select>
+</mapper>
